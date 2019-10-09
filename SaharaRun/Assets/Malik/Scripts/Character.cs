@@ -25,6 +25,10 @@ public class Character : MonoBehaviour
     private float swipeDistance;
     private float swipeTime;
 
+    //Attribute
+
+    public float m_speed;
+
 
     private void Awake()
     {
@@ -37,7 +41,8 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        SwipeToJump();  
+        MoveRight();
+        SwipeDetection();  
     }
 
     void Jump()
@@ -58,7 +63,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    void SwipeToJump()
+    void SwipeDetection()
     {
         if(Input.touchCount > 0)
         {
@@ -86,9 +91,40 @@ public class Character : MonoBehaviour
                             Debug.Log("Up Swipe");
                             Jump();
                         }
+
+                        if(distance.y < 0)
+                        {
+                            Debug.Log("Down Swipe");
+                        }
+                    }
+
+                    if(Mathf.Abs(distance.y) < Mathf.Abs(distance.x))
+                    {
+                        if(distance.x > 0)
+                        {
+                            Debug.Log("Right Swipe");
+                        }
+
+                        if(distance.x < 0)
+                        {
+                            Debug.Log("Left Swipe");
+                        }
                     }
                 }
+
+                startTimer = 0;
+                endTimer = 0;
+
+                startPos = Vector3.zero;
+                endPos = Vector3.zero;
+                swipeTime = 0;
+                swipeDistance = 0;
             }
         }
+    }
+
+    void MoveRight()
+    {
+        transform.Translate(Vector2.right * m_speed * Time.deltaTime);
     }
 }

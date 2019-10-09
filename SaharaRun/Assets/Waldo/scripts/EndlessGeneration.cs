@@ -3,35 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EndlessGeneration : MonoBehaviour {
+
+    [SerializeField] Transform m_Spawn;
     [SerializeField]
-    private List<GameObject> Backgrounds;
+    private List<GameObject> m_Prefabs;
     [SerializeField]
-    private GameObject Background;
+    private Transform m_SpawnPosition;
     [SerializeField]
-    private Transform SpawnPosition;
+    private float m_Distancebetween;
     [SerializeField]
-    private float distancebetween;
-    [SerializeField]
-    private float BackGroundWidth;
+    private float m_BackGroundWidth;
 
     // Use this for initialization
     void Start () {
-        if (Background)
-        {
-            BackGroundWidth = Background.GetComponent<SpriteRenderer>().size.x;
-        }
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if(transform.position.x < SpawnPosition.position.x)
+		if(transform.position.x < m_SpawnPosition.position.x)
         {
             Debug.Log("Spawn");
-            transform.position = new Vector3(transform.position.x + BackGroundWidth + distancebetween, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + m_BackGroundWidth + m_Distancebetween, m_Spawn.transform.position.y, m_Spawn.transform.position.z);
 
-            Instantiate(Backgrounds[Random.Range(1, Backgrounds.Count)], transform.position, transform.rotation);
-            //SpawnBackground();
+            Instantiate(m_Prefabs[Random.Range(0, m_Prefabs.Count)], transform.position, transform.rotation);
         }
 	}
 }
