@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 1164991282}
   - component: {fileID: 1164991287}
   m_Layer: 0
-  m_Name: dCharacter
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
   lowJumpMultiplier: 2
   maxTime: 0.5
   minSwipeDist: 50
-  m_speed: 0
+  m_speed: 1
 --- !u!1 &1344849111
 GameObject:
   m_ObjectHideFlags: 0

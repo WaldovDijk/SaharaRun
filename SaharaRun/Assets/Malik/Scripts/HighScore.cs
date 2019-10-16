@@ -18,7 +18,7 @@ public class HighScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_scoreText.text = m_score.ToString("F0");
+        m_scoreText.text =  "Score: " +  m_score.ToString("F0");
         AddScoresPerSec();
     }
 
