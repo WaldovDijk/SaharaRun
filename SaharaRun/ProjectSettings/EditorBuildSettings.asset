@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Malik/Scene/Malik.unity
     guid: 2be6c2ddd308f6e428ba29e8a4fddd32
+  - enabled: 1
+    path: Assets/Waldo/Waldo.unity
+    guid: 1902cd972e0700d4d8eb4e14bcc3d158
   m_configObjects: {}

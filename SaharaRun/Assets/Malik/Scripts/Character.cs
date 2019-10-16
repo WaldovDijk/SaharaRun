@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     [Range(1, 10)]
     public float m_jumpVelocity;
 
-    private Rigidbody2D rb;
+    private Rigidbody rb;
 
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
@@ -32,7 +32,7 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
     void Start()
     {
@@ -47,20 +47,7 @@ public class Character : MonoBehaviour
 
     void Jump()
     {
-        rb.velocity = Vector2.up * m_jumpVelocity;        
-
-        if (rb.velocity.y < 0)
-        {
-            rb.gravityScale = fallMultiplier;
-        }
-        else if (rb.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.gravityScale = lowJumpMultiplier;
-        }
-        else
-        {
-            rb.gravityScale = 1f;
-        }
+        rb.velocity = Vector3.up * m_jumpVelocity;        
     }
 
     void SwipeDetection()
