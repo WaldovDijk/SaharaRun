@@ -25,6 +25,10 @@ public class Character : MonoBehaviour
     private float swipeDistance;
     private float swipeTime;
 
+    public GameManager gameManager;
+
+    public Movement m_Movement;
+
     //Attribute
 
     public float m_speed;
@@ -33,6 +37,7 @@ public class Character : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        Physics.gravity = new Vector3(0, -20.0F, 0);
     }
     void Start()
     {
@@ -42,12 +47,17 @@ public class Character : MonoBehaviour
     void Update()
     {
         MoveRight();
-        SwipeDetection();  
+        SwipeDetection();
+
     }
 
     void Jump()
     {
         rb.velocity = Vector3.up * m_jumpVelocity;        
+    }
+    void Fall()
+    {
+        rb.velocity = Vector3.down * m_jumpVelocity;
     }
 
     void SwipeDetection()
@@ -82,6 +92,7 @@ public class Character : MonoBehaviour
                         if(distance.y < 0)
                         {
                             Debug.Log("Down Swipe");
+                            Fall();
                         }
                     }
 

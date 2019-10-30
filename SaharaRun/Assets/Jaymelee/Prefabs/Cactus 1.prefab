@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6608510808750015468}
   - component: {fileID: 1083934160677787143}
   m_Layer: 0
-  m_Name: pCylinder5
+  m_Name: Cactus 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: ad6db9f7e2c45f148b5299391ed9bdc5, type: 3}
+  - {fileID: 2100000, guid: cab39f0b7bb2ffe4da729f994201da95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
