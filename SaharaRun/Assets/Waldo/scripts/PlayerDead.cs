@@ -8,11 +8,13 @@ public class PlayerDead : MonoBehaviour
     private Character m_Character;
     private Movement m_Movement;
 
+    [SerializeField] private GameObject m_Player;
+
     // Start is called before the first frame update
     void Start()
     {
-        m_Character = GetComponent<Character>();
-        m_Movement = GetComponent<Movement>();
+        m_Character = m_Player.GetComponent<Character>();
+        m_Movement = m_Player.GetComponent<Movement>();
     }
 
 
@@ -20,7 +22,7 @@ public class PlayerDead : MonoBehaviour
     {
         if(other.transform.tag == "Obstacle")
         {
-            Debug.Log("Dead");
+           
             m_Character.enabled = false;
             m_Movement.enabled = false;
         }

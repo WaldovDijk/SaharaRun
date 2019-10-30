@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7209654853903457260}
   - component: {fileID: 1825875789260333530}
   - component: {fileID: 5362196370945137955}
-  - component: {fileID: -1539185247443008806}
   m_Layer: 0
   m_Name: dino_duck_lp_prefab
   m_TagString: Untagged
@@ -79,17 +78,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-1539185247443008806
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5933087050315131391}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -5850960565218760885, guid: 9586baca81e679949858286d84d0960f, type: 3}
